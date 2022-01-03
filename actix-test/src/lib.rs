@@ -527,7 +527,7 @@ impl TestServer {
     ) -> Result<Framed<impl AsyncRead + AsyncWrite, ws::Codec>, awc::error::WsClientError> {
         let url = self.url(path);
         let connect = self.client.ws(url).connect();
-        connect.await.map(|(_, framed)| framed)
+        connect.await
     }
 
     /// Connect to a WebSocket server.
