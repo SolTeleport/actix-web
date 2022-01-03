@@ -524,7 +524,7 @@ impl TestServer {
     pub async fn ws_at(
         &mut self,
         path: &str,
-    ) -> Result<Framed<impl AsyncRead + AsyncWrite, ws::Codec>, awc::error::WsClientError> {
+    ) -> Result<ws::WsConnection<impl AsyncRead + AsyncWrite>, awc::error::WsClientError> {
         let url = self.url(path);
         let connect = self.client.ws(url).connect();
         connect.await
@@ -533,7 +533,7 @@ impl TestServer {
     /// Connect to a WebSocket server.
     pub async fn ws(
         &mut self,
-    ) -> Result<Framed<impl AsyncRead + AsyncWrite, ws::Codec>, awc::error::WsClientError> {
+    ) -> Result<ws::WsConnection<impl AsyncRead + AsyncWrite>, awc::error::WsClientError> {
         self.ws_at("/").await
     }
 
