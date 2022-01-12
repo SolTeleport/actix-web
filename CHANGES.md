@@ -2,6 +2,24 @@
 
 ## Unreleased - 2021-xx-xx
 ### Added
+- `GuardContext::header` [#2569]
+- `ServiceConfig::configure` to allow easy nesting of configuration functions. [#1988]
+
+### Changed
+- `HttpResponse` can now be used as a `Responder` with any body type. [#2567]
+- `Result` extractor wrapper can now convert error types. [#2581]
+- Associated types in `FromRequest` impl for `Option` and `Result` has changed. [#2581]
+- Maximim number of extractors has changed from 10 to 12. [#2582]
+
+[#1988]: https://github.com/actix/actix-web/pull/1988
+[#2567]: https://github.com/actix/actix-web/pull/2567
+[#2569]: https://github.com/actix/actix-web/pull/2569
+[#2581]: https://github.com/actix/actix-web/pull/2581
+[#2582]: https://github.com/actix/actix-web/pull/2582
+
+
+## 4.0.0-beta.19 - 2022-01-04
+### Added
 - `impl Hash` for `http::header::Encoding`. [#2501]
 - `AcceptEncoding::negotiate()`. [#2501]
 

@@ -1,7 +1,17 @@
 # Changes
 
 ## Unreleased - 2021-xx-xx
+- The `prefer_utf8` option introduced in `0.4.0` is now true by default. [#2583]
+
+[#2583]: https://github.com/actix/actix-web/pull/2583
+
+
+## 0.6.0-beta.13 - 2022-01-04
+- The `Files` service now rejects requests with URL paths that include `%2F` (decoded: `/`). [#2398]
+- The `Files` service now correctly decodes `%25` in the URL path to `%` for the file path. [#2398]
 - Minimum supported Rust version (MSRV) is now 1.54.
+
+[#2398]: https://github.com/actix/actix-web/pull/2398
 
 
 ## 0.6.0-beta.12 - 2021-12-29
